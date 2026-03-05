@@ -1,0 +1,17 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "deploy",
+            "type": "shell",
+            "command": "adb",
+            "args": [
+                "push",
+                "--sync",
+                "${workspaceFolder}/.",
+                "/sdcard/Android/data/org.lovr.app/files"
+            ],
+            "problemMatcher": [ ]
+        }
+    ]
+}
