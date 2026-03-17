@@ -7,7 +7,7 @@ local launch = require "launch"
 local iui = require "lib.iui"
 local backend = require "lib.lovr-iui"
 
-local sampleMain = require "sample"
+local sample = require "sample"
 
 --- @type Texture
 local envTex
@@ -23,6 +23,12 @@ function lovr.load()
     end
 
     iui.load(backend)
+
+    sample.load({
+        gameSunsetImage = lovr.graphics.newTexture(
+            "sample/assets/game-sunset.png", {}
+        )
+    })
 
     if iui.idiom == "vr" then
         lovr.headset.setPassthrough("opaque")
@@ -40,14 +46,14 @@ function lovr.update(dt)
         -- In desktop mode, we use IUI's standard window API to fill the screen.
         iui.beginWindow(lovr.system.getWindowDimensions())
 
-        sampleMain()
+        sample.main()
 
         iui.endWindow()
     elseif iui.idiom == "vr" then
         -- In VR mode, we have access to the backend's `LovrIUIWorldWindow`
         -- class, which handles windowing in world-space.
         if mainWindow:beginFrame() then
-            sampleMain()
+            sample.main()
 
             mainWindow:endFrame()
         end
