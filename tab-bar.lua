@@ -2,6 +2,7 @@ local iui = require "lib.iui"
 
 local tabSplit = require "sample.tab-split"
 local tabDisabled = require "sample.tab-disabled"
+local tabImage = require "sample.tab-image"
 
 local function sampleTabBar()
     local windowState = iui.style["windowState"] --- @type SampleWindowState
@@ -17,7 +18,11 @@ local function sampleTabBar()
             )
 
             windowState.selectedTab = iui.tabItem(
-                "Misc", windowState.selectedTab, "tabC"
+                "Images", windowState.selectedTab, "tabC"
+            )
+
+            windowState.selectedTab = iui.tabItem(
+                "Misc", windowState.selectedTab, "tabD"
             )
         end,
         function()
@@ -26,6 +31,8 @@ local function sampleTabBar()
             elseif windowState.selectedTab == "tabB" then
                 tabDisabled()
             elseif windowState.selectedTab == "tabC" then
+                tabImage()
+            elseif windowState.selectedTab == "tabD" then
                 -- This tab is too simple to justify breaking it out into its
                 -- own file.
                 iui.panelBackground()

@@ -1,6 +1,6 @@
 local iui = require "lib.iui"
 
---- @alias TabValue "tabA" | "tabB" | "tabC"
+--- @alias TabValue "tabA" | "tabB" | "tabC" | "tabD"
 
 --- @class SampleWindowState
 --- @field selectedTab TabValue
