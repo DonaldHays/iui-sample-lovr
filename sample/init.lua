@@ -6,6 +6,9 @@ local SampleWindowState = require "sample.window-state"
 local sampleMenuBar = require "sample.menu-bar"
 local sampleTabBar = require "sample.tab-bar"
 
+--- @class SampleAssets
+--- @field gameSunsetImage any
+
 -- For this sample, I created two "model" object types: an app state and a
 -- window state. The app state contains the values for various controls, while
 -- the window state contains presentation information for the window, like which
@@ -16,16 +19,26 @@ local sampleTabBar = require "sample.tab-bar"
 local state = SampleAppState.new()
 local windowState = SampleWindowState.new()
 
-local function sampleMain()
+--- @class Sample
+--- @field assets SampleAssets
+local sample = {}
+
+--- @param assets SampleAssets
+function sample.load(assets)
+    sample.assets = assets
+end
+
+function sample.main()
     -- We can use the `style` table for dependency injection. Here, we inject
-    -- the app and window states in our main function, making them available
-    -- from anywhere in the UI.
+    -- the app and window states in our main function, along with some assets,
+    -- making them available from anywhere in the UI.
     iui.style["appState"] = state
     iui.style["windowState"] = windowState
+    iui.style["assets"] = sample.assets
 
     sampleMenuBar(
         sampleTabBar
     )
 end
 
-return sampleMain
+return sample
