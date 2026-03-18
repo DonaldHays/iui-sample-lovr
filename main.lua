@@ -40,6 +40,10 @@ function lovr.load()
 end
 
 function lovr.update(dt)
+    if lovr.system.isKeyDown("escape") then
+        lovr.event.quit()
+    end
+
     iui.beginFrame(dt)
 
     if iui.idiom == "desktop" then
