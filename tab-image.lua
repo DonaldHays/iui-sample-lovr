@@ -23,6 +23,7 @@ local function tabImage()
 
             iui.style.push()
             iui.style["imageMode"] = appState.imageFillMode
+            iui.style["imageClip"] = appState.imageClip
 
             iui.image(assets.gameSunsetImage)
 
@@ -44,6 +45,12 @@ local function tabImage()
 
             appState.imageFillMode = iui.radio(
                 "Center", appState.imageFillMode, "center"
+            )
+
+            iui.divider()
+
+            appState.imageClip = iui.checkbox(
+                "Clip to Bounds", appState.imageClip
             )
         end
     )

@@ -8,6 +8,7 @@
 --- @field checkA boolean
 --- @field checkB boolean
 --- @field imageFillMode IUIImageMode
+--- @field imageClip boolean
 local SampleAppState = {}
 
 --- @return SampleAppState
@@ -21,6 +22,7 @@ function SampleAppState.new()
         checkA = true,
         checkB = false,
         imageFillMode = "aspectFit",
+        imageClip = true,
     }
 end
 
