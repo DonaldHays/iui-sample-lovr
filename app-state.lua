@@ -7,6 +7,7 @@
 --- @field floatValue number
 --- @field checkA boolean
 --- @field checkB boolean
+--- @field imageFilter IUIImageFilter
 --- @field imageFillMode IUIImageMode
 --- @field imageClip boolean
 local SampleAppState = {}
@@ -21,6 +22,7 @@ function SampleAppState.new()
         floatValue = 0.5,
         checkA = true,
         checkB = false,
+        imageFilter = "linear",
         imageFillMode = "aspectFit",
         imageClip = true,
     }
