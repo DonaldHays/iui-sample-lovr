@@ -22,6 +22,7 @@ local function tabImage()
             iui.layout.beginRow({ kind = "dynamic", count = 1 }, h - margin * 2)
 
             iui.style.push()
+            iui.style["imageFilter"] = appState.imageFilter
             iui.style["imageMode"] = appState.imageFillMode
             iui.style["imageClip"] = appState.imageClip
 
@@ -30,6 +31,21 @@ local function tabImage()
             iui.style.pop()
         end,
         function()
+            iui.label("Filter")
+            appState.imageFilter = iui.radio(
+                "Nearest", appState.imageFilter, "nearest"
+            )
+
+            appState.imageFilter = iui.radio(
+                "Smooth", appState.imageFilter, "smooth"
+            )
+
+            appState.imageFilter = iui.radio(
+                "Linear", appState.imageFilter, "linear"
+            )
+
+            iui.divider()
+
             iui.label("Fill Mode")
             appState.imageFillMode = iui.radio(
                 "Fill", appState.imageFillMode, "fill"
