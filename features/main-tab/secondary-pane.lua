@@ -40,8 +40,11 @@ local function labeledSliderSample(value)
 end
 
 local function splitSecondaryPane()
-    local state = iui.style["appState"]          --- @type SampleAppState
-    local windowState = iui.style["windowState"] --- @type SampleWindowState
+    --- @type MainTabState
+    local state = iui.style["appState"].mainTab
+
+    --- @type MainTabWindowState
+    local windowState = iui.style["windowState"].mainTab
 
     -- Do layout using fixed-width columns 250 pixels wide. The layout manager
     -- will fit as many columns of that width within the panel as it can.
@@ -97,7 +100,7 @@ local function splitSecondaryPane()
         for _ = 1, 10 do
             iui.label("Some more text")
         end
-    end, windowState.primaryScrollManager)
+    end, windowState.scrollManager)
 
     -- Creating a single-column dynamic layout is an easy way to have a divider
     -- fill the width of its panel.

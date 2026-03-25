@@ -1,13 +1,14 @@
 local iui = require "lib.iui"
 
-local SampleAppState = require "sample.app-state"
-local SampleWindowState = require "sample.window-state"
+local SampleAppState = require "sample.models.app-state"
+local SampleWindowState = require "sample.models.window-state"
 
 local sampleMenuBar = require "sample.menu-bar"
 local sampleTabBar = require "sample.tab-bar"
 
 --- @class SampleAssets
 --- @field gameSunsetImage any
+--- @field nineSliceImage IUIImage9Slice
 
 -- For this sample, I created two "model" object types: an app state and a
 -- window state. The app state contains the values for various controls, while

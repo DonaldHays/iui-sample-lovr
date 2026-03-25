@@ -1,20 +1,17 @@
 --- @alias RadioValue "valueA" | "valueB" | "valueC"
 
---- @class SampleAppState
+--- @class MainTabState
 --- @field radioValue RadioValue
 --- @field labelValue string
 --- @field stringValue string
 --- @field floatValue number
 --- @field checkA boolean
 --- @field checkB boolean
---- @field imageFilter IUIImageFilter
---- @field imageFillMode IUIImageMode
---- @field imageClip boolean
-local SampleAppState = {}
+local MainTabState = {}
 
---- @return SampleAppState
-function SampleAppState.new()
-    --- @type SampleAppState
+--- @return MainTabState
+function MainTabState.new()
+    --- @type MainTabState
     return {
         radioValue = "valueA",
         labelValue = "Click a Button!",
@@ -22,10 +19,7 @@ function SampleAppState.new()
         floatValue = 0.5,
         checkA = true,
         checkB = false,
-        imageFilter = "linear",
-        imageFillMode = "aspectFit",
-        imageClip = true,
     }
 end
 
-return SampleAppState
+return MainTabState

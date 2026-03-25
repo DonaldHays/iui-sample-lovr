@@ -1,10 +1,11 @@
 local iui = require "lib.iui"
 
-local splitPrimaryPane = require "sample.split-primary-pane"
-local splitSecondaryPane = require "sample.split-secondary-pane"
+local primaryPane = require "sample.features.main-tab.primary-pane"
+local secondaryPane = require "sample.features.main-tab.secondary-pane"
 
 local function tabSplit()
-    local windowState = iui.style["windowState"] --- @type SampleWindowState
+    --- @type MainTabWindowState
+    local windowState = iui.style["windowState"].mainTab
 
     -- Widgets can consult the `style` table for additional customization beyond
     -- their arguments. In this case, the minimum and maximum split view resize
@@ -20,12 +21,12 @@ local function tabSplit()
     iui.style["splitMinEdge"] = 100
     iui.style["splitMaxEdge"] = 320
 
-    windowState.primarySplitValue = iui.splitView(
+    windowState.splitValue = iui.splitView(
         "primarySplit",
         "horiz",
-        windowState.primarySplitValue,
-        splitPrimaryPane,
-        splitSecondaryPane
+        windowState.splitValue,
+        primaryPane,
+        secondaryPane
     )
 
     -- Pushing a scope must be balanced with a pop.
