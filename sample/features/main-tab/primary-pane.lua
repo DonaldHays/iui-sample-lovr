@@ -4,8 +4,8 @@ local function splitPrimaryPane()
     -- The app state was injected into the style table earlier, so we can
     -- retrieve it without needing to take it as a function parameter.
 
-    --- @type SampleAppState
-    local state = iui.style["appState"]
+    --- @type MainTabState
+    local state = iui.style["appState"].mainTab
 
     -- Check boxes take their current value, and return their new value.
     state.checkA = iui.checkbox("Check A", state.checkA)
