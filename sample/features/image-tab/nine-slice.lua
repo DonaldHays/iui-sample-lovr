@@ -1,5 +1,7 @@
 local iui = require "lib.iui"
 
+local round = iui.utils.round
+
 local function content()
     local appState = iui.style["appState"] --- @type SampleAppState
     local state = appState.imageTab.nineSlice
@@ -10,11 +12,13 @@ local function content()
 
     iui.draw.pushClip(x, y, w, h)
 
-    x = x + iui.utils.round((w - state.width) / 2)
-    y = y + iui.utils.round((h - state.height) / 2)
+    local width, height = round(state.width), round(state.height)
 
-    iui.layout.beginPanel(x, y, state.width, state.height, 0)
-    iui.layout.beginRow({ kind = "dynamic", count = 1 }, state.height)
+    x = x + round((w - width) / 2)
+    y = y + round((h - height) / 2)
+
+    iui.layout.beginPanel(x, y, width, height, 0)
+    iui.layout.beginRow({ kind = "dynamic", count = 1 }, height)
 
     iui.style.push()
     iui.style["imageFilter"] = state.filter
