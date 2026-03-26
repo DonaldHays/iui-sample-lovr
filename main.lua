@@ -27,7 +27,16 @@ function lovr.load()
     sample.load({
         gameSunsetImage = lovr.graphics.newTexture(
             "sample/assets/game-sunset.png", {}
-        )
+        ),
+        nineSliceImage = {
+            image = lovr.graphics.newTexture(
+                "sample/assets/ui-box-slice.png", { mipmaps = false }
+            ),
+            l = 8,
+            t = 8,
+            r = 8,
+            b = 8
+        }
     })
 
     if iui.idiom == "vr" then
