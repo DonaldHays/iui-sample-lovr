@@ -6,10 +6,7 @@ local function content()
 
     local assets = iui.style["assets"] --- @type SampleAssets
 
-    local x, y, w, h = iui.layout.getPanelBounds()
-    local margin = iui.style["margin"]
-
-    iui.layout.beginRow({ kind = "dynamic", count = 1 }, h - margin * 2)
+    iui.layout.fillPanel()
 
     local bx, by, bw, bh = iui.layout.getBounds()
     iui.draw(function()

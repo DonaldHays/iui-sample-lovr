@@ -19,12 +19,9 @@ local function splitPrimaryPane()
     state.radioValue = iui.radio("Radio B", state.radioValue, "valueB")
     state.radioValue = iui.radio("Radio C", state.radioValue, "valueC")
 
-    -- Here we do a little layout trick. We retrieve the current panel, and
-    -- calculate a custom height to fill the remaining space (less the margin).
-    local panel = iui.layout.getPanel()
-    local scrollHeight = panel.h - (panel.rowY + panel.margin)
-
-    iui.layout.beginRow({ kind = "dynamic", count = 1 }, scrollHeight)
+    -- The `fillPanel` API is handy when you want something to fill the rest of
+    -- the height of the current panel.
+    iui.layout.fillPanel()
     iui.scrollView("scroll2", function()
         iui.label("Hello, World 1")
         iui.label("Hello, World 2")
