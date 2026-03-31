@@ -18,7 +18,7 @@ local function content()
     y = y + round((h - height) / 2)
 
     iui.layout.beginPanel(x, y, width, height, 0)
-    iui.layout.beginRow({ kind = "dynamic", count = 1 }, height)
+    iui.layout.fillPanel()
 
     iui.style.push()
     iui.style["imageFilter"] = state.filter
