@@ -2,6 +2,7 @@ local iui = require "lib.iui"
 
 local simple = require "sample.features.image-tab.simple"
 local nineSlice = require "sample.features.image-tab.nine-slice"
+local msdf = require "sample.features.image-tab.msdf"
 
 local function tabImage()
     local windowState = iui.style["windowState"] --- @type SampleWindowState
@@ -26,12 +27,18 @@ local function tabImage()
             tabWinState.selection = iui.radio(
                 "9-Slice", tabWinState.selection, "9slice"
             )
+
+            tabWinState.selection = iui.radio(
+                "MSDF", tabWinState.selection, "msdf"
+            )
         end,
         function()
             if tabWinState.selection == "simple" then
                 simple()
             elseif tabWinState.selection == "9slice" then
                 nineSlice()
+            elseif tabWinState.selection == "msdf" then
+                msdf()
             end
         end
     )

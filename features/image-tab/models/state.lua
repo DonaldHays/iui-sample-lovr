@@ -8,9 +8,14 @@
 --- @field width number
 --- @field height number
 
+--- @class MSDFImageState
+--- @field fillMode IUIImageMode
+--- @field clip boolean
+
 --- @class ImageTabState
 --- @field simple SimpleImageState
 --- @field nineSlice NineSliceImageState
+--- @field msdf MSDFImageState
 local ImageTabState = {}
 
 function ImageTabState.new()
@@ -25,6 +30,10 @@ function ImageTabState.new()
             filter = "smooth",
             width = 300,
             height = 60,
+        },
+        msdf = {
+            fillMode = "aspectFit",
+            clip = true,
         }
     }
 end
