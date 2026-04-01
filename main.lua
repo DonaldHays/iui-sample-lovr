@@ -36,7 +36,11 @@ function lovr.load()
             t = 8,
             r = 8,
             b = 8
-        }
+        },
+        checkmarkMSDFImage = lovr.graphics.newTexture(
+            "lib/iui/assets/glyph-checkmark.png",
+            { linear = true, mipmaps = false }
+        ),
     })
 
     if iui.idiom == "vr" then
