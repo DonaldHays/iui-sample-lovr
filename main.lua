@@ -37,10 +37,22 @@ function lovr.load()
             r = 8,
             b = 8
         },
-        checkmarkMSDFImage = lovr.graphics.newTexture(
-            "lib/iui/assets/glyph-checkmark.png",
-            { linear = true, mipmaps = false }
-        ),
+        smileMSDFLayeredImage = {
+            {
+                image = lovr.graphics.newTexture(
+                    "sample/assets/smile-bg.png",
+                    { linear = true, mipmaps = false }
+                ),
+                color = iui.newColor(0.944, 0.794, 0.468)
+            },
+            {
+                image = lovr.graphics.newTexture(
+                    "sample/assets/smile-fg.png",
+                    { linear = true, mipmaps = false }
+                ),
+                color = iui.newColor(0.157, 0.157, 0.157)
+            }
+        },
         nineSliceMSDFImage = {
             image = lovr.graphics.newTexture(
                 "sample/assets/nine-slice-frame.png",
