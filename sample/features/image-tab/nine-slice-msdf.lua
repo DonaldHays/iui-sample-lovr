@@ -20,7 +20,7 @@ local function content()
     iui.layout.beginPanel(x, y, width, height, 0)
     iui.layout.fillPanel()
 
-    iui.msdfImage9Slice(assets.nineSliceMSDFImage, iui.colors.sysGray500)
+    iui.msdfLayeredImage9Slice(assets.nineSliceMSDFLayeredImage)
 
     iui.layout.endPanel()
     iui.draw.popClip()

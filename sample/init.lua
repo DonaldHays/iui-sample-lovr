@@ -10,7 +10,7 @@ local sampleTabBar = require "sample.tab-bar"
 --- @field gameSunsetImage any
 --- @field nineSliceImage IUIImage9Slice
 --- @field smileMSDFLayeredImage IUILayeredImage
---- @field nineSliceMSDFImage IUIImage9Slice
+--- @field nineSliceMSDFLayeredImage IUILayeredImage
 
 -- For this sample, I created two "model" object types: an app state and a
 -- window state. The app state contains the values for various controls, while

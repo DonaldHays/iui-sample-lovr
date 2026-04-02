@@ -53,15 +53,33 @@ function lovr.load()
                 color = iui.newColor(0.157, 0.157, 0.157)
             }
         },
-        nineSliceMSDFImage = {
-            image = lovr.graphics.newTexture(
-                "sample/assets/nine-slice-frame.png",
-                { linear = true, mipmaps = false }
-            ),
-            l = 16,
-            t = 24,
-            r = 16,
-            b = 24
+        nineSliceMSDFLayeredImage = {
+            {
+                image = {
+                    image = lovr.graphics.newTexture(
+                        "sample/assets/nine-slice-interior.png",
+                        { linear = true, mipmaps = false }
+                    ),
+                    l = 16,
+                    t = 24,
+                    r = 16,
+                    b = 24
+                },
+                color = iui.newColor(0.337, 0.653, 0.939)
+            },
+            {
+                image = {
+                    image = lovr.graphics.newTexture(
+                        "sample/assets/nine-slice-frame.png",
+                        { linear = true, mipmaps = false }
+                    ),
+                    l = 16,
+                    t = 24,
+                    r = 16,
+                    b = 24
+                },
+                color = iui.newColor(0.258, 0.300, 0.572)
+            }
         }
     })
 
