@@ -12,7 +12,7 @@ local function content()
     iui.style["imageMode"] = state.fillMode
     iui.style["imageClip"] = state.clip
 
-    iui.msdfImage(assets.checkmarkMSDFImage, iui.colors.sysAccent500)
+    iui.msdfLayeredImage(assets.smileMSDFLayeredImage)
 
     iui.style.pop()
 end
