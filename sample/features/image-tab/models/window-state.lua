@@ -1,4 +1,4 @@
---- @alias ImageTabImage "simple" | "9slice" | "msdf"
+--- @alias ImageTabImage "simple" | "9slice" | "msdf" | "9slice-msdf"
 
 --- @class ImageContentWindowState
 --- @field splitValue number
@@ -9,6 +9,7 @@
 --- @field simple ImageContentWindowState
 --- @field nineSlice ImageContentWindowState
 --- @field msdf ImageContentWindowState
+--- @field nineSliceMSDF ImageContentWindowState
 local ImageTabWindowState = {}
 
 function ImageTabWindowState.new()
@@ -25,6 +26,9 @@ function ImageTabWindowState.new()
         msdf = {
             splitValue = 300
         },
+        nineSliceMSDF = {
+            splitValue = 300
+        }
     }
 end
 

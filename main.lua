@@ -41,6 +41,16 @@ function lovr.load()
             "lib/iui/assets/glyph-checkmark.png",
             { linear = true, mipmaps = false }
         ),
+        nineSliceMSDFImage = {
+            image = lovr.graphics.newTexture(
+                "sample/assets/nine-slice-frame.png",
+                { linear = true, mipmaps = false }
+            ),
+            l = 16,
+            t = 24,
+            r = 16,
+            b = 24
+        }
     })
 
     if iui.idiom == "vr" then
