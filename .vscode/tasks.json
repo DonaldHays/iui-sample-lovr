@@ -4,13 +4,7 @@
         {
             "label": "deploy",
             "type": "shell",
-            "command": "adb",
-            "args": [
-                "push",
-                "--sync",
-                "${workspaceFolder}/.",
-                "/sdcard/Android/data/org.lovr.app/files"
-            ],
+            "command": "tar --exclude='.git' -cf - . | adb shell \"cd /sdcard/Android/data/org.lovr.app/files && tar -xf -\"",
             "problemMatcher": [ ]
         }
     ]
