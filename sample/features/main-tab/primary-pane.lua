@@ -22,23 +22,8 @@ local function splitPrimaryPane()
     -- The `fillPanel` API is handy when you want something to fill the rest of
     -- the height of the current panel.
     iui.layout.fillPanel()
-    iui.scrollView("scroll2", function()
-        iui.label("Hello, World 1")
-        iui.label("Hello, World 2")
-        iui.label("Hello, World 3")
-        iui.label("Hello, World 4")
-
-        if iui.button("Clip A") then
-            print("Clip A")
-        end
-
-        if iui.button("Clip B") then
-            print("Clip B")
-        end
-
-        if iui.button("Clip C") then
-            print("Clip C")
-        end
+    iui.listView("List", 100, iui.layout.getDefaultRowHeight(), function(index)
+        iui.label("Item #" .. index)
     end)
 end
 
