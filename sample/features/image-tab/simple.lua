@@ -9,10 +9,8 @@ local function content()
     iui.layout.fillPanel()
 
     local bx, by, bw, bh = iui.layout.getBounds()
-    iui.draw(function()
-        iui.colors.sysGray0:set()
-        iui.graphics.rectangle(bx, by, bw, bh)
-    end)
+    iui.colors.sysGray0:set()
+    iui.graphics.rectangle(bx, by, bw, bh)
 
     iui.style.push()
     iui.style["imageFilter"] = state.filter
