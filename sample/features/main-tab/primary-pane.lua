@@ -30,9 +30,11 @@ local function splitPrimaryPane()
     -- The `fillPanel` API is handy when you want something to fill the rest of
     -- the height of the current panel.
     iui.layout.fillPanel()
-    iui.listView("List", 100, iui.layout.getDefaultRowHeight(), function(index)
+
+    for index in iui.listView("List", 100, nil, windowState.listManager) do
         iui.label("Item #" .. index)
-    end, windowState.listManager)
+    end
+    iui.endListView()
 end
 
 return splitPrimaryPane

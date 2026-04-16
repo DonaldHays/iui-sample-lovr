@@ -79,28 +79,28 @@ local function splitSecondaryPane()
     -- though the scroll position reset. By managing the scroll manager
     -- externally, and passing it in, we can give it a lifecycle longer than the
     -- widget.
-    iui.scrollView("scroll", function()
-        iui.label("Hello, World 1")
-        iui.label("Hello, World 2")
-        iui.label("Hello, World 3")
-        iui.label("Hello, World 4")
+    iui.scrollView("scroll", windowState.scrollManager)
+    iui.label("Hello, World 1")
+    iui.label("Hello, World 2")
+    iui.label("Hello, World 3")
+    iui.label("Hello, World 4")
 
-        if iui.button("Clip A") then
-            print("Clip A")
-        end
+    if iui.button("Clip A") then
+        print("Clip A")
+    end
 
-        if iui.button("Clip B") then
-            print("Clip B")
-        end
+    if iui.button("Clip B") then
+        print("Clip B")
+    end
 
-        if iui.button("Clip C") then
-            print("Clip C")
-        end
+    if iui.button("Clip C") then
+        print("Clip C")
+    end
 
-        for _ = 1, 10 do
-            iui.label("Some more text")
-        end
-    end, windowState.scrollManager)
+    for _ = 1, 10 do
+        iui.label("Some more text")
+    end
+    iui.endScrollView()
 
     -- Creating a single-column dynamic layout is an easy way to have a divider
     -- fill the width of its panel.
