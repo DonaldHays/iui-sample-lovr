@@ -108,16 +108,20 @@ end
 
 --- @param content fun()
 local function sampleMenuBar(content)
-    -- The menu bar widget takes a function that defines the menu bar items, and
-    -- another function that supplies their content below the menu bar in the
-    -- containing panel. We declare the menu items ourselves here, but we take
-    -- the content function as a parameter.
+    -- The menu bar widget handles both the bar itself, and setting up the
+    -- layout for the content area under the bar. We declare the menu items
+    -- ourselves here, but we take the content function as a parameter.
+    iui.menuBar()
 
-    iui.menuBar(function()
-        fileMenu()
-        editMenu()
-        helpMenu()
-    end, content)
+    fileMenu()
+    editMenu()
+    helpMenu()
+
+    iui.menuBarDivider()
+
+    content()
+
+    iui.endMenuBar()
 end
 
 return sampleMenuBar

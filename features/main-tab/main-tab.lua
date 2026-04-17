@@ -24,10 +24,12 @@ local function tabSplit()
     windowState.splitValue = iui.splitView(
         "primarySplit",
         "horiz",
-        windowState.splitValue,
-        primaryPane,
-        secondaryPane
+        windowState.splitValue
     )
+    primaryPane()
+    iui.splitViewDivider()
+    secondaryPane()
+    iui.endSplitView()
 
     -- Pushing a scope must be balanced with a pop.
     iui.style.pop()
