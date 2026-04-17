@@ -43,13 +43,10 @@ local function inspector()
 
     iui.label("Size")
 
-    iui.layout.beginRow({
-        kind = "mixed",
-        columns = {
-            { kind = "fixed",   size = 50 },
-            { kind = "dynamic", size = 1 },
-        }
-    })
+    iui.layout.beginMixedRow {
+        { kind = "fixed",   size = 50 },
+        { kind = "dynamic", size = 1 },
+    }
 
     iui.label("Width")
     state.width = iui.slider("Width", state.width, 100, 400)
