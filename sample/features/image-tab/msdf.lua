@@ -52,8 +52,12 @@ local function msdf()
     iui.style["splitSide"] = "max"
 
     winState.splitValue = iui.splitView(
-        "imageSplit", "horiz", winState.splitValue, content, inspector
+        "imageSplit", "horiz", winState.splitValue
     )
+    content()
+    iui.splitViewDivider()
+    inspector()
+    iui.endSplitView()
 
     iui.style.pop()
 end
