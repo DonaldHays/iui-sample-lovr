@@ -21,13 +21,10 @@ local function labeledSliderSample(value)
     -- do anything. But if, for example, there were two dynamic columns, one
     -- with a `size` of `2` and a second with a `size` of `1`, the first column
     -- would be allotted twice as much space as the other.
-    iui.layout.beginRow({
-        kind = "mixed",
-        columns = {
-            { kind = "dynamic", size = 1 },
-            { kind = "fixed",   size = 50 }
-        }
-    })
+    iui.layout.beginMixedRow {
+        { kind = "dynamic", size = 1 },
+        { kind = "fixed",   size = 50 }
+    }
 
     value = iui.slider("Slide Me", value, 0, 1)
     iui.label(tostring(iui.utils.round(value * 1000) / 1000))
@@ -48,7 +45,7 @@ local function splitSecondaryPane()
 
     -- Do layout using fixed-width columns 250 pixels wide. The layout manager
     -- will fit as many columns of that width within the panel as it can.
-    iui.layout.beginRow({ kind = "fixed", size = 250 })
+    iui.layout.beginFixedRow(250)
 
     if iui.button("Click Me") then
         state.labelValue = "Clicked the first button!"
@@ -67,7 +64,7 @@ local function splitSecondaryPane()
 
     state.stringValue = iui.textField("Some Text", state.stringValue)
 
-    iui.layout.beginRow({ kind = "fixed", size = 300 }, 210)
+    iui.layout.beginFixedRow(300, 210)
 
     -- We pass a custom `IUIScrollManager` instance to this scroll view. Doing
     -- so is optional. If you omit a scroll manager, the widget will create and
@@ -104,7 +101,7 @@ local function splitSecondaryPane()
 
     -- Creating a single-column dynamic layout is an easy way to have a divider
     -- fill the width of its panel.
-    iui.layout.beginRow({ kind = "dynamic", count = 1 })
+    iui.layout.beginDynamicRow()
     iui.divider()
 end
 
