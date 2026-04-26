@@ -31,10 +31,17 @@ local function splitPrimaryPane()
     -- the height of the current panel.
     iui.layout.fillPanel()
 
+    -- Lists use the style's spacing between rows. This doesn't look as good
+    -- when the list supports selection, so let's zero out the spacing.
+    iui.style.push()
+    iui.style["spacing"] = 0
+
     for index in iui.listView("List", 100, nil, windowState.listManager) do
         iui.label("Item #" .. index)
     end
     iui.endListView()
+
+    iui.style.pop()
 end
 
 return splitPrimaryPane

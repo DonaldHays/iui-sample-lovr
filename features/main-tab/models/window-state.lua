@@ -7,10 +7,14 @@ local iui = require "lib.iui"
 local MainTabWindowState = {}
 
 function MainTabWindowState.new()
+    local listManager = iui.newListManager()
+
+    listManager.allowsMultipleSelection = true
+
     --- @type MainTabWindowState
     return {
         splitValue = 200,
-        listManager = iui.newListManager(),
+        listManager = listManager,
         scrollManager = iui.newScrollManager(),
     }
 end
